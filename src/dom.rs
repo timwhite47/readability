@@ -105,6 +105,7 @@ pub fn extract_text(handle: Handle, text: &mut String, deep: bool) {
         match c.data {
             Text { ref contents } => {
                 text.push_str(contents.borrow().trim());
+                text.push_str(" ");
             },
             Element { .. } => {
                 if deep {
